@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+    <!-- link css file -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body
+    class="relative bg-gradient-to-b from-radialFrom to-radialTo bg-no-repeat bg-cover h-[100vh] flex flex-col items-center"
+  >
+    <header class="py-[25px] min-[800px]:w-1/2">
+      <nav
+        class="flex items-center justify-between text-white outline outline-headerOutline rounded-lg p-[10px] min-[800px]:p-[20px]"
+      >
+        <h1
+          class="font-bold text-balance w-1/5 text-[1.6rem] leading-[1.3rem] uppercase my-[10px]"
+        >
+          rock paper scissors
+        </h1>
+        <div
+          class="score bg-gray-200 py-[10px] w-[35%] min-[800px]:w-[20%] text-center rounded-md flex items-center justify-center flex-col gap-[5px]"
+        >
+          <h3 class="text-scoreText uppercase text-[1rem] font-semibold">
+            Score
+          </h3>
+          <h1
+            class="text-[#545068] text-[4rem] font-bold tracking-tighter leading-[1]"
+          >
+            0
+          </h1>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section
+        class="step-1 bg-[url('../images/bg-triangle.svg')] relative gap-[25%] bg-center bg-no-repeat flex justify-center flex-wrap min-h-[60vh] min-[600px]:min-h-[50vh] min-w-[50vw] min-[600px]:my-[70px] duration-500"
+      >
+        <div class="relative paper-circle" data-id="1">
+          <img src="./assets/images/icon-paper.svg" alt="paper" />
+        </div>
+        <div
+          class="min-[800px]:absolute min-[800px]:bottom-0 rock-circle"
+          data-id="2"
+        >
+          <img src="./assets/images/icon-rock.svg" alt="rock" />
+        </div>
+        <div class="relative scissors-circle" data-id="3">
+          <img src="./assets/images/icon-scissors.svg" alt="scissors" />
+        </div>
+      </section>
+
+      <div
+        class="rules-btn outline outline-headerOutline uppercase text-white absolute bottom-[5vh] right-1/2 translate-x-1/2 min-[800px]:translate-x-0 min-[800px]:right-[3vw] py-[10px] flex justify-center items-center px-[40px] rounded-lg tracking-wider text-[0.9rem] cursor-pointer duration-700 text-opacity-70 hover:text-opacity-100"
+      >
+        rules
+      </div>
+    </main>
+    <div class="hidden duration-500 rules">
+      <div class="flex items-center justify-between mt-[10px] mb-[30px]">
+        <h1 class="font-bold text-darkText text-[1.5rem] tracking-tighter">
+          RULES
+        </h1>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          id="closeRules"
+          class="cursor-pointer"
+        >
+          <path
+            fill="#3B4262"
+            fill-rule="evenodd"
+            d="M16.97 0l2.122 2.121-7.425 7.425 7.425 7.425-2.121 2.12-7.425-7.424-7.425 7.425L0 16.97l7.425-7.425L0 2.121 2.121 0l7.425 7.425L16.971 0z"
+            opacity=".25"
+          />
+        </svg>
+      </div>
+      <div>
+        <img src="./assets/images/image-rules.svg" alt="rules" />
+      </div>
+    </div>
+    <script src="./assets/js/main.js
+    "></script>
+  </body>
+</html>
