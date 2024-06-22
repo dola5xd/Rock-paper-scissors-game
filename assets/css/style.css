@@ -2743,6 +2743,10 @@ main {
   text-wrap: nowrap;
 }
 
+.result .result-state #Again {
+  text-wrap: nowrap;
+}
+
 #userPick,
 #pcPick {
   transform: translateY(7vh);
@@ -2850,7 +2854,7 @@ main {
   .result .result-state {
     position: absolute;
     scale: 1;
-    top: 200%;
+    top: 250%;
     left: 50%;
     transform: translate(-15%, -50%);
   }
@@ -2982,17 +2986,6 @@ main {
 
 .hover\:focus\:text-center:focus:hover {
   text-align: center;
-}
-
-@media (min-width: 600px) {
-  .min-\[600px\]\:my-\[70px\] {
-    margin-top: 70px;
-    margin-bottom: 70px;
-  }
-
-  .min-\[600px\]\:min-h-\[50vh\] {
-    min-height: 50vh;
-  }
 }
 
 @media (min-width: 640px) {
