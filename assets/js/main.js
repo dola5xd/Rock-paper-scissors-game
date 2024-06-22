@@ -21,7 +21,9 @@ let pcChoice;
 // Reload previos Score
 window.onload = function () {
   const score = localStorage.getItem("Score");
-  document.querySelector(".score h1").textContent = score;
+  score != null
+    ? (document.querySelector(".score h1").textContent = score)
+    : (document.querySelector(".score h1").textContent = "0");
 };
 
 function randomNumber() {
