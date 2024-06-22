@@ -659,8 +659,8 @@ video {
   inset: -0.25rem;
 }
 
-.bottom-\[5vh\] {
-  bottom: 5vh;
+.bottom-\[7vh\] {
+  bottom: 7vh;
 }
 
 .end-1 {
@@ -843,8 +843,8 @@ video {
   height: 100vh;
 }
 
-.min-h-\[60vh\] {
-  min-height: 60vh;
+.min-h-\[425px\] {
+  min-height: 425px;
 }
 
 .w-1\/5 {
@@ -2630,10 +2630,6 @@ main {
   max-width: 100vw;
 }
 
-body {
-  overflow: hidden;
-}
-
 .paper-circle,
 .rock-circle,
 .scissors-circle {
@@ -2840,13 +2836,15 @@ body {
   }
 
   .result {
-    gap: 65px;
+    gap: 50%;
     scale: 0.6;
     flex-wrap: nowrap;
+    transform: translateX(-15%);
   }
 
   .result .picked {
     transform: translateX(-8%);
+    gap: 25px;
   }
 
   .result .result-state {
@@ -2854,7 +2852,7 @@ body {
     scale: 1;
     top: 200%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-15%, -50%);
   }
 
   .result .picked .winner::before {
@@ -2883,7 +2881,7 @@ body {
   }
 
   .step-1 {
-    scale: 0.7;
+    scale: 0.6;
     gap: 15vh 30%;
     flex-wrap: nowrap;
   }
@@ -2904,11 +2902,12 @@ body {
   }
 
   .result .picked {
-    scale: 0.5;
+    scale: 0.6;
   }
 
   .result .result-state {
     scale: 0.7;
+    transform: translateX(15%);
   }
 }
 
@@ -3013,6 +3012,15 @@ body {
 
   .min-\[800px\]\:right-\[3vw\] {
     right: 3vw;
+  }
+
+  .min-\[800px\]\:my-\[70px\] {
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+
+  .min-\[800px\]\:min-h-\[50vh\] {
+    min-height: 50vh;
   }
 
   .min-\[800px\]\:w-1\/2 {

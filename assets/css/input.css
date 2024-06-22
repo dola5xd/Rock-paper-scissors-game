@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&display=swap");
+* {
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+main {
+  max-width: 100vw;
+}
+
+.paper-circle,
+.rock-circle,
+.scissors-circle {
+  padding: 10px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 150px;
+  transition: 0.7s;
+  cursor: pointer;
+  scale: 1.5;
+  animation: smooth 1s ease-in-out;
+}
+
+.step-1 .paper-circle:hover,
+.step-1 .rock-circle:hover,
+.step-1 .scissors-circle:hover {
+  scale: 1.7;
+}
+
+.paper-circle::after,
+.rock-circle::after,
+.scissors-circle::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 80%;
+  height: 80%;
+  border-radius: 100%;
+  box-shadow: inset -3px 5px 4px #0000008c;
+}
+
+.paper-circle img,
+.rock-circle img,
+.scissors-circle img {
+  z-index: 6;
+}
+
+.paper-circle {
+  background: linear-gradient(90deg, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+}
+
+.rock-circle {
+  background: linear-gradient(90deg, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+}
+
+.scissors-circle {
+  background: linear-gradient(90deg, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+}
+
+.rules {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 7px;
+  z-index: 50;
+  box-shadow: 0px 0px 20px 100vw #0006;
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  gap: 150px;
+  margin: 50px 0;
+}
+
+.result .picked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.result .picked h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.result .picked div {
+  border-radius: 100%;
+  background-color: hsl(237, 49%, 15%);
+  height: 200px;
+  width: 200px;
+}
+
+.result .result-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.result .result-state .state {
+  font-size: 2.5em;
+  line-height: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  transition: 0.5s;
+  text-wrap: nowrap;
+}
+
+#userPick,
+#pcPick {
+  transform: translateY(7vh);
+}
+
+#userPick .paper-circle,
+#userPick .rock-circle,
+#userPick .scissors-circle,
+#pcPick .paper-circle,
+#pcPick .rock-circle,
+#pcPick .scissors-circle {
+  cursor: default;
+}
+
+@keyframes smooth {
+  0% {
+    scale: 1;
+  }
+  100% {
+    scale: 1.5;
+  }
+}
+
+.result .picked .winner {
+  box-shadow: 0px 0px 0px 50px #5656562b;
+}
+
+.result .picked .winner::before {
+  box-shadow: 0px 0px 0px 50px #99999917;
+  content: "";
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  border-radius: 100%;
+  transition: all 0.7s;
+}
+
+#Again {
+  z-index: 10;
+  outline: 0;
+}
+
+@media (min-width: 320px) and (max-width: 599px) {
+  header {
+    width: 90%;
+  }
+  header nav h1,
+  .score {
+    scale: 0.7;
+  }
+  .score {
+    width: 50%;
+    position: relative;
+    right: -15px;
+  }
+  .step-1 {
+    scale: 0.5;
+    gap: 125px;
+    flex-wrap: nowrap;
+  }
+  .rock-circle {
+    position: absolute;
+    bottom: 0;
+  }
+  .result .picked div {
+    height: 100px;
+    width: 100px;
+  }
+  .result .picked h1 {
+    font-size: 20px;
+    text-wrap: nowrap;
+  }
+  .step-1 .paper-circle,
+  .step-1 .rock-circle,
+  .step-1 .scissors-circle {
+    min-width: 150px;
+  }
+  .paper-circle img,
+  .rock-circle img,
+  .scissors-circle img {
+    scale: 0.7;
+  }
+  .result {
+    gap: 50%;
+    scale: 0.6;
+    flex-wrap: nowrap;
+    transform: translateX(-15%);
+  }
+  .result .picked {
+    transform: translateX(-8%);
+    gap: 25px;
+  }
+  .result .result-state {
+    position: absolute;
+    scale: 1;
+    top: 200%;
+    left: 50%;
+    transform: translate(-15%, -50%);
+  }
+  .result .picked .winner::before {
+    width: 50px;
+    height: 50px;
+  }
+  .rules {
+    min-width: 250px;
+    min-height: 200px;
+  }
+  .rules-btn {
+    font-size: 0.7rem;
+    padding: 10px 40px;
+  }
+  .rules div {
+    scale: 0.9;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+  header {
+    width: 75%;
+  }
+  .step-1 {
+    scale: 0.6;
+    gap: 15vh 30%;
+    flex-wrap: nowrap;
+  }
+  .step-1 .paper-circle,
+  .step-1 .rock-circle,
+  .step-1 .scissors-circle {
+    min-width: 150px;
+  }
+  .rock-circle {
+    position: absolute;
+    bottom: 0;
+  }
+  .result {
+    gap: 0px;
+  }
+  .result .picked {
+    scale: 0.6;
+  }
+  .result .result-state {
+    scale: 0.7;
+    transform: translateX(15%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1250px) {
+  .result {
+    scale: 0.7;
+  }
+}
